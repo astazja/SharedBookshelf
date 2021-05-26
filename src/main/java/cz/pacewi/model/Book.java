@@ -26,11 +26,15 @@ public class Book {
     @ISBN
     private String isbn;
     @NotNull
+    @Size(min = 1, max = 60)
+    private String publisher;
+    @NotNull
     @Digits(integer = 4, fraction = 0)
     private LocalDateTime publicationYear;
     @NotNull
     @Size(min = 1, max = 60)
     private String genre;
+    private String description;
     private String photo;
     private Boolean borrowed;
     @OneToOne
