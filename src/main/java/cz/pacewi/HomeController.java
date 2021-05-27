@@ -13,11 +13,16 @@ public class HomeController {
 
     @RequestMapping("/book")
     public String dashboard() {
-        return "user/dashboard";
+        return "books/dashboard";
     }
 
     @RequestMapping("/bookshelf")
     public String bookshelf() {
-        return "guest/bookshelf";
+        return "guest/pageBookshelf";
+    }
+
+    @RequestMapping("/details")
+    public String details() {
+        return "books/details";
     }
 }
