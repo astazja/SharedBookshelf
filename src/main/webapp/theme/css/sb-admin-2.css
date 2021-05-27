@@ -2354,6 +2354,17 @@ a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none;
 }
+.btn-bookshelf {
+  color: #fff;
+  background-color: var(--primary);
+  border-color: var(--primary);
+  margin-bottom: 1rem;
+}
+.btn-bookshelf:hover {
+  color: #fff;
+  background-color: #2e59d9;
+  border-color: #2653d4;
+}
 
 .btn-primary {
   color: #fff;
