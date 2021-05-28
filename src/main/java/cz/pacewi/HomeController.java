@@ -25,4 +25,9 @@ public class HomeController {
     public String details() {
         return "books/details";
     }
+
+    @RequestMapping("/all")
+    public String all() {
+        return "books/all";
+    }
 }

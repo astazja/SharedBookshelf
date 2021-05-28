@@ -36,6 +36,7 @@ public class Book {
     private String genre;
     private String description;
     private String photo;
+    private Integer pages;
     private Boolean borrowed;
     @OneToOne
     @JoinColumn(name = "owner_id", unique = true)

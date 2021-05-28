@@ -11290,3 +11290,54 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
+.bg-blue-100 {
+  background-color: #1D809F !important;
+}
+
+.bg-blue-200 {
+  background-color: #247ea8!important;
+}
+
+.bg-blue-300 {
+  background-color: #287dad !important;
+}
+
+.bg-blue-400 {
+  background-color: #2f7bb6 !important;
+}
+
+.bg-blue-500 {
+  background-color: #347abd !important;
+}
+
+.bg-blue-600 {
+  background-color: #3d78c8 !important;
+}
+
+.bg-blue-700 {
+  background-color: #4476d1 !important;
+}
+
+.bg-blue-800 {
+  background-color: #4a74d9 !important;
+}
+
+.bg-blue-900 {
+  background-color: #4e73df !important;
+}
+.profil a:visited, a:link{
+  text-decoration: none;
+  color: whitesmoke;
+}
+.profil a:hover{
+  text-decoration: none;
+  color: var(--yellow);
+}
+.img-table {
+  max-width: 100%;
+  height: auto;
+}
+.table-photo {
+  max-width: 13.375rem;
+  height: auto;
+}

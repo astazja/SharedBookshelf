@@ -66,11 +66,45 @@
                                         </button>
                                     </div>
                                 </div>
-
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="fs-5 mb-5">
-                                    <span class="text-decoration-line-through">Należy do: </span>
+
+                                    <div class="p-3 bg-blue-100 text-white border-left-warning profil">
+                                        <span class="text-decoration-line-through">Belongs to: </span>
+                                        <span><a href="#">Imię i nazwisko właściciela</a></span>
+                                    </div>
+                                    <div class="p-3 bg-blue-200 text-white border-left-warning">
+                                        <span class="text-decoration-line-through">Publisher: </span>
+                                        <span>Helion</span></div>
+                                    <div class="p-3 bg-blue-300 text-white border-left-warning">
+                                        <span class="text-decoration-line-through">Copyright: </span>
+                                        <span>2021</span>
+                                    </div>
+                                    <div class="p-3 bg-blue-400 text-white border-left-warning">
+                                        <span class="text-decoration-line-through">Book Size: </span>
+                                        <span>234 Pages</span>
+                                    </div>
+                                    <div class="p-3 bg-blue-500 text-white border-left-warning">
+                                        <span class="text-decoration-line-through">ISBN: </span>
+                                        <span>12234677899</span>
+                                    </div>
+                                    <div class="p-3 bg-blue-600 text-white border-left-warning profil">
+                                        <span class="text-decoration-line-through">Who has one: </span>
+                                        <span><a href="#">Imię i nazwisko właściciela</a></span>
+                                    </div>
+                                    <div class="p-3 bg-blue-700 text-white border-left-warning">
+                                        <span class="text-decoration-line-through">Bookshelf: </span>
+                                        <span>Where i have one</span>
+                                    </div>
+                                    <div class="p-3 bg-blue-800 text-white border-left-warning profil">
+                                        <span class="text-decoration-line-through">Notes: </span>
+                                        <span><a href="#">My notes</a></span>
+                                    </div>
+                                    <div class="p-3 bg-blue-900 text-white border-left-warning">
+                                        <span class="text-decoration-line-through">Book back: </span>
+                                        <span>30.05.2021 or The owner has one.</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
