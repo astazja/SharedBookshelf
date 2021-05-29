@@ -22,10 +22,16 @@
         <div class="sidebar-heading">
             Interface
         </div>
-        <!-- Nav Item - Charts -->
+        <!-- Nav Item - Home -->
         <li class="nav-item">
             <a class="nav-link" href="<c:url value="/"/>">
                 <span>Home</span>
+            </a>
+        </li>
+        <!-- Nav Item - Notes -->
+        <li class="nav-item">
+            <a class="nav-link" href="<c:url value="/"/>">
+                <span>Notes</span>
             </a>
         </li>
         <!-- Nav Item - Pages Collapse Menu -->
