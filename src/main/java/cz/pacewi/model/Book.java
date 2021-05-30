@@ -38,6 +38,9 @@ public class Book {
     private String photo;
     private Integer pages;
     private Boolean borrowed;
+    private Boolean recommend;
+    private Boolean finished;
+    private Integer readTo;
     @OneToOne
     @JoinColumn(name = "owner_id", unique = true)
     private User owner;

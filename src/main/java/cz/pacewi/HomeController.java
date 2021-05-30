@@ -55,4 +55,49 @@ public class HomeController {
     public String addBook() {
         return "books/add";
     }
+
+    @RequestMapping("/history")
+    public String historyBook() {
+        return "books/history";
+    }
+
+    @RequestMapping("/historyProgress")
+    public String historyBookProgress() {
+        return "books/editProgress";
+    }
+
+    @RequestMapping("/notes")
+    public String allNotes() {
+        return "notes/all";
+    }
+
+    @RequestMapping("/notesList")
+    public String allNotesList() {
+        return "notes/list";
+    }
+
+    @RequestMapping("/notesEdit")
+    public String notesEdit() {
+        return "notes/edit";
+    }
+
+    @RequestMapping("/notesAdd")
+    public String notesAdd() {
+        return "notes/add";
+    }
+
+    @RequestMapping("/userEdit")
+    public String userEdit() {
+        return "user/edit";
+    }
+
+    @RequestMapping("/userAdd")
+    public String userAdd() {
+        return "user/add";
+    }
+
+    @RequestMapping("/userList")
+    public String userList() {
+        return "user/list";
+    } // to edit
 }

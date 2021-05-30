@@ -23,7 +23,7 @@
 <!-- Page Wrapper -->
 <div id="wrapper">
     <!-- Sidebar -->
-    <c:import url="dashboardSidebar.jsp"/>
+    <c:import url="../dashboardSidebar.jsp"/>
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -33,7 +33,7 @@
         <div id="content">
 
             <!-- Topbar -->
-            <c:import url="dashboardTopbar.jsp"/>
+            <c:import url="../dashboardTopbar.jsp"/>
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->

@@ -16,6 +16,9 @@ public class User {
     private Long id;
     @NotNull
     @Size(min = 2, max = 30)
+    private String nick;
+    @NotNull
+    @Size(min = 2, max = 30)
     private String name;
     @NotNull
     @Size(min = 2, max = 30)

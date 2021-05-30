@@ -23,7 +23,7 @@
 <!-- Page Wrapper -->
 <div id="wrapper">
     <!-- Sidebar -->
-    <c:import url="dashboardSidebar.jsp"/>
+    <c:import url="../dashboardSidebar.jsp"/>
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -33,16 +33,14 @@
         <div id="content">
 
             <!-- Topbar -->
-            <c:import url="dashboardTopbar.jsp"/>
+            <c:import url="../dashboardTopbar.jsp"/>
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Edit Book</h1>
-                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                            class="fas fa-download fa-sm text-white-50"></i>Back to List</a>
+                    <h1 class="h3 mb-0 text-gray-800">Edit Profile</h1>
                 </div>
                 <!-- Page Content-->
                 <div class="row">
@@ -50,10 +48,10 @@
                         <!-- Basic Card Example -->
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Book Picture</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Profile Picture</h6>
                             </div>
                             <div class="card-body text-center">
-                                <img class="card-img-top mb-5 mb-md-0" src="theme/assets/img/bookCover/book6.jpg" alt="..." />
+                                <img class="card-img-top mb-5 mb-md-0" src="theme/assets/img/users/person1.jpg" alt="..." />
                                 <div class="small font-italic text-muted mb-4">JPG no larger then 5MB</div>
                                 <input class="form-control text-center me-3"  type="hidden" value="1" style="max-width: 3rem" />
                                 <button class="btn btn-outline-dark flex-shrink-0 btn-block" type="button">
@@ -68,7 +66,7 @@
                         <!-- Basic Card Example -->
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Book Details</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Account Details</h6>
                             </div>
                             <div class="card-body">
                                 <form>
@@ -92,15 +90,28 @@
                                     </div>
                                     <!-- Form Row        -->
                                     <div class="row gx-3 mb-3">
-                                        <!-- Form Group (organization name)-->
+                                        <!-- Form Group (city)-->
                                         <div class="col-md-6">
-                                            <label class="small mb-1" for="inputOrgName">Organization name</label>
-                                            <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="Start Bootstrap">
+                                            <label class="small mb-1" for="inputCity">City</label>
+                                            <input class="form-control" id="inputCity" type="text" placeholder="Enter your city" value="Warszawa">
                                         </div>
-                                        <!-- Form Group (location)-->
+                                        <!-- Form Group (street)-->
                                         <div class="col-md-6">
-                                            <label class="small mb-1" for="inputLocation">Location</label>
-                                            <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="San Francisco, CA">
+                                            <label class="small mb-1" for="inputLocation">Street</label>
+                                            <input class="form-control" id="inputLocation" type="text" placeholder="Enter your street" value="San Francisco, CA">
+                                        </div>
+                                    </div>
+                                    <!-- Form Row        -->
+                                    <div class="row gx-3 mb-3">
+                                        <!-- Form Group (number)-->
+                                        <div class="col-md-6">
+                                            <label class="small mb-1" for="inputNumber">Number</label>
+                                            <input class="form-control" id="inputNumber" type="number" placeholder="Enter your number" value="23">
+                                        </div>
+                                        <!-- Form Group (post code)-->
+                                        <div class="col-md-6">
+                                            <label class="small mb-1" for="inputPostCode">Post Code</label>
+                                            <input class="form-control" id="inputPostCode" type="text" placeholder="Enter your post code" value="45-987">
                                         </div>
                                     </div>
                                     <!-- Form Group (email address)-->
@@ -113,12 +124,12 @@
                                         <!-- Form Group (phone number)-->
                                         <div class="col-md-6">
                                             <label class="small mb-1" for="inputPhone">Phone number</label>
-                                            <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="555-123-4567">
+                                            <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="555-123-456">
                                         </div>
-                                        <!-- Form Group (birthday)-->
+                                        <!-- Form Group (agreement)-->
                                         <div class="col-md-6">
-                                            <label class="small mb-1" for="inputBirthday">Birthday</label>
-                                            <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="06/10/1988">
+                                            <label class="small mb-1" for="inputNextLent">Do you agree to let others borrow your books to others?</label>
+                                            <input class="form-control" id="inputNextLent" type="text" name="birthday" placeholder="Enter your birthday" value="Yes/No">
                                         </div>
                                     </div>
                                     <!-- Save changes button-->
