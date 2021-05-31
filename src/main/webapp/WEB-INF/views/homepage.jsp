@@ -10,7 +10,7 @@
     <meta name="author" content="" />
     <title>Stylish Portfolio - Start Bootstrap Template</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="<c:url value="/theme/assets/favicon.ico"/>" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <!-- Simple line icons-->
@@ -187,6 +187,6 @@
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
-<script src="theme/js/scripts.js"></script>
+<script src="<c:url value="/theme/js/scripts.js"/>"></script>
 </body>
 </html>

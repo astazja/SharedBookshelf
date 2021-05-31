@@ -13,10 +13,9 @@
     <meta name="author" content="">
     <title><spring:message code="app.title"/></title>
     <!-- Custom fonts for this template-->
-    <link href="theme/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-            rel="stylesheet">
+    <link href="<c:url value="/theme/vendor/fontawesome-free/css/all.min.css"/>" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="<c:url value="/theme/css/sb-admin-2.css"/>" rel="stylesheet">
 </head>
@@ -72,25 +71,27 @@
                                 <h6 class="m-0 font-weight-bold text-primary">Book Details</h6>
                             </div>
                             <div class="card-body">
-                                <form>
-<%--                                <form:form method="post" modelAttribute="book">--%>
-<%--                                    <form:hidden path="id"/>--%>
+                                <form:form action="/book/update" method="post" modelAttribute="book">
+                                    <form:hidden path="id"/>
                                     <!-- Form Group (title)-->
                                     <div class="mb-3">
                                         <label class="small mb-1" for="inputTitle">Title</label>
-                                        <input class="form-control" id="inputTitle" type="text" value="title">
+                                        <form:input class="form-control" id="inputTitle" path="title"/>
+                                        <form:errors path="title"/>
                                     </div>
                                     <!-- Form Row-->
                                     <div class="row gx-3 mb-3">
                                         <!-- Form Group (author)-->
                                         <div class="col-md-6">
                                             <label class="small mb-1" for="inputAuthor">Author</label>
-                                            <input class="form-control" id="inputAuthor" type="text" value="Valerie">
+                                            <form:input class="form-control" id="inputAuthor" path="author"/>
+                                            <form:errors path="author"/>
                                         </div>
                                         <!-- Form Group (publisher)-->
                                         <div class="col-md-6">
                                             <label class="small mb-1" for="inputPublisher">Publisher</label>
-                                            <input class="form-control" id="inputPublisher" type="text"  value="Luna">
+                                            <form:input class="form-control" id="inputPublisher" path="publisher"/>
+                                            <form:errors path="publisher"/>
                                         </div>
                                     </div>
                                     <!-- Form Row-->
@@ -98,12 +99,14 @@
                                         <!-- Form Group (ISBN)-->
                                         <div class="col-md-6">
                                             <label class="small mb-1" for="inputIsbn">ISBN</label>
-                                            <input class="form-control" id="inputIsbn" type="text" value="123-123-123">
+                                            <form:input class="form-control" id="inputIsbn" path="isbn"/>
+                                            <form:errors path="isbn"/>
                                         </div>
                                         <!-- Form Group (Publication Year)-->
                                         <div class="col-md-6">
                                             <label class="small mb-1" for="inputYear">Publication Year</label>
-                                            <input class="form-control" id="inputYear" type="date" value="20.12.2020">
+                                            <form:input class="form-control" id="inputYear" path="publicationYear"/>
+                                            <form:errors path="publicationYear"/>
                                         </div>
                                     </div>
                                     <!-- Form Row-->
@@ -111,28 +114,31 @@
                                         <!-- Form Group (genre)-->
                                         <div class="col-md-6">
                                             <label class="small mb-1" for="inputGenre">Genre</label>
-                                            <input class="form-control" id="inputGenre" type="text" value="Novel">
+                                            <form:input class="form-control" id="inputGenre" path="genre"/>
+                                            <form:errors path="genre"/>
                                         </div>
                                         <!-- Form Group (book size)-->
                                         <div class="col-md-6">
                                             <label class="small mb-1" for="inputSize">Book Size</label>
-                                            <input class="form-control" id="inputSize" type="number" value="456">
+                                            <form:input class="form-control" id="inputSize" path="pages"/>
+                                            <form:errors path="pages"/>
                                         </div>
                                     </div>
                                     <!-- Form Group (bookshelf)-->
                                     <div class="mb-3">
                                         <label class="small mb-1" for="inputBookshelf">Bookshelf</label>
-                                        <input class="form-control" id="inputBookshelf" type="textarea" value="Leży obok akwarium">
+                                        <form:textarea class="form-control" id="inputBookshelf" path="bookshelf"/>
+                                        <form:errors path="bookshelf"/>
                                     </div>
                                     <!-- Form Group (description)-->
                                     <div class="mb-3">
                                         <label class="small mb-1" for="inputDescription">Description</label>
-                                        <input class="form-control" id="inputDescription" type="textarea" value="Leży obok akwarium dobra książka">
+                                        <form:textarea class="form-control" id="inputDescription" path="description"/>
+                                        <form:errors path="description"/>
                                     </div>
                                     <!-- Save changes button-->
-                                    <button class="btn btn-primary" type="button">Save changes</button>
-<%--                                </form:form>--%>
-                                </form>
+                                    <button class="btn btn-primary" type="submit">Save changes</button>
+                                </form:form>
                             </div>
                         </div>
                     </div>
@@ -157,19 +163,14 @@
 
 
 <!-- Bootstrap core JavaScript-->
-<script src="theme/vendor/jquery/jquery.min.js"></script>
-<script src="theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<c:url value="/theme/vendor/jquery/jquery.min.js"/>"></script>
+<script src="<c:url value="/theme/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="theme/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="<c:url value="/theme/vendor/jquery-easing/jquery.easing.min.js"/>"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="theme/js/sb-admin-2.min.js"></script>
-
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="theme/js/scripts.js"></script>
+<script src="<c:url value="/theme/js/sb-admin-2.min.js"/>"></script>
 </body>
 
 </html>

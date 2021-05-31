@@ -30,7 +30,7 @@ public class Book {
     private String publisher;
     @NotNull
     @Digits(integer = 4, fraction = 0)
-    private LocalDateTime publicationYear;
+    private Integer publicationYear;
     @NotNull
     @Size(min = 1, max = 60)
     private String genre;

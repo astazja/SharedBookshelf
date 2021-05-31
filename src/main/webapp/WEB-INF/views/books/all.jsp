@@ -12,10 +12,9 @@
   <meta name="author" content="">
   <title><spring:message code="app.title"/></title>
   <!-- Custom fonts for this template-->
-  <link href="theme/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link
-          href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet">
+  <link href="<c:url value="/theme/vendor/fontawesome-free/css/all.min.css"/>" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="<c:url value="/theme/css/sb-admin-2.css"/>" rel="stylesheet">
 </head>
@@ -42,7 +41,6 @@
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
           <h1 class="h3 mb-0 text-gray-800">List of Books </h1>
         </div>
-
         <!-- Page Content-->
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
@@ -65,47 +63,30 @@
                 </tr>
                 </thead>
                 <tbody>
+                <c:forEach items="${books}" var="book">
                 <tr>
                     <td class="table-photo">
-                        <img class="card-img-top img-table" src="theme/assets/img/bookCover/book6.jpg" alt="..." />
+                        <img class="card-img-top img-table" src="${book.photo}" alt="..." />
                     </td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
+                    <td>${book.title}</td>
+                    <td>${book.author}</td>
+                    <td>${book.genre}</td>
+                    <td>${book.pages}</td>
                     <td>
-                        <a href="#">Imię i nazwisko właściciela</a>
+                        <a href="#">${book.owner.name} ${book.owner.surname}</a>
                     </td>
                     <td>2011/04/25 or now</td>
                     <td>
-                        <a class="btn btn-bookshelf" href="#!">Details</a>
+                        <a class="btn btn-bookshelf" href="<c:url value="/book/show/${book.id}"/>">Details</a>
                         <a class="btn btn-bookshelf" href="#!">Borrow</a>
                     </td>
                 </tr>
-                <tr>
-                    <td class="table-photo">
-                        <img class=" card-img-top img-table" src="theme/assets/img/bookCover/book7.jpg" alt="..." />
-                    </td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>
-                        <a href="#">Imię i nazwisko właściciela</a>
-                    </td>
-                    <td>2011/04/25 or now</td>
-                    <td>
-                        <a class="btn btn-bookshelf" href="#!">Details</a>
-                        <a class="btn btn-bookshelf" href="#!">Borrow</a>
-                    </td>
-                </tr>
+                </c:forEach>
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-
-
       </div>
       <!-- /.container-fluid -->
     </div>
@@ -124,28 +105,22 @@
 </div>
 <!-- End of Page Wrapper -->
 
-
 <!-- Bootstrap core JavaScript-->
-<script src="theme/vendor/jquery/jquery.min.js"></script>
-<script src="theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<c:url value="/theme/vendor/jquery/jquery.min.js"/>"></script>
+<script src="<c:url value="/theme/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="theme/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="<c:url value="/theme/vendor/jquery-easing/jquery.easing.min.js"/>"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="theme/js/sb-admin-2.min.js"></script>
-
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="theme/js/scripts.js"></script>
+<script src="<c:url value="/theme/js/sb-admin-2.min.js"/>"></script>
 
 <!-- Page level plugins -->
-<script src="theme/vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="theme/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="<c:url value="/theme/vendor/datatables/jquery.dataTables.min.js"/>"></script>
+<script src="<c:url value="/theme/vendor/datatables/dataTables.bootstrap4.min.js"/>"></script>
 
 <!-- Page level custom scripts -->
-<script src="theme/js/demo/datatables-demo.js"></script>
+<script src="<c:url value="/theme/js/demo/datatables-demo.js"/>"></script>
 </body>
 
 </html>

@@ -12,10 +12,9 @@
     <meta name="author" content="">
     <title><spring:message code="app.title"/></title>
     <!-- Custom fonts for this template-->
-    <link href="theme/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-            rel="stylesheet">
+    <link href="<c:url value="/theme/vendor/fontawesome-free/css/all.min.css"/>" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="<c:url value="/theme/css/sb-admin-2.css"/>" rel="stylesheet">
 </head>
@@ -40,16 +39,14 @@
             <div class="container-fluid">
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">List of Notes for the Book of the Title: <em>tytul</em></h1>
-                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                            class="fas fa-download fa-sm text-white-50"></i>Add Note</a>
+                    <h1 class="h3 mb-0 text-gray-800">List of People in service</h1>
                 </div>
 
                 <!-- Page Content-->
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">List of Notes</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">List of Profiles</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -57,69 +54,31 @@
                                 <thead>
                                 <tr>
                                     <th>Photo</th>
-                                    <th>Title</th>
-                                    <th>Description</th>
-                                    <th>Book finished</th>
-                                    <th>Read to</th>
-                                    <th>Important page</th>
-                                    <th>Belongs to:</th>
+                                    <th>Nick</th>
+                                    <th>Address</th>
+                                    <th>Books</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td class="table-photo">
-                                        <img class="card-img-top img-table" src="theme/assets/img/notes/note1.jpg" alt="..." />
-                                    </td>
-                                    <td>System Architect</td>
-                                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ultricies
-                                        sodales ante vitae lacinia. Integer ut est orci. Vivamus mauris nunc, dictum a
-                                        vehicula et, gravida nec lorem. Curabitur elementum dictum dui nec pharetra.
-                                        Mauris pulvinar, sem sit amet sollicitudin interdum, nibh mi efficitur ex, id
-                                        scelerisque est nunc sed ante. Pellentesque sodales feugiat orci vel bibendum.
-                                        Nunc sit amet magna blandit, convallis nunc et, malesuada ante. Vestibulum nisl
-                                        mi, facilisis nec massa vitae, posuere efficitur quam. Vivamus eget diam commodo,
-                                        tempus velit eget, consequat orci. Sed fringilla odio et dictum mollis.
-                                    </td>
-                                    <td>Yes/No</td>
-                                    <td>56 of BookSize</td>
-                                    <td>56, 45, 76, 98</td>
-                                    <td>
-                                        <a href="#">Imię i nazwisko właściciela</a>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-bookshelf" href="#!">Edit Note</a>
-                                        <a class="btn btn-bookshelf" href="#!">Remove Note</a>
-                                        <a class="btn btn-bookshelf" href="#!">Book details</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="table-photo">
-                                        <img class="card-img-top img-table" src="theme/assets/img/notes/note2.jpg" alt="..." />
-                                    </td>
-                                    <td>System Architect</td>
-                                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ultricies
-                                        sodales ante vitae lacinia. Integer ut est orci. Vivamus mauris nunc, dictum a
-                                        vehicula et, gravida nec lorem. Curabitur elementum dictum dui nec pharetra.
-                                        Mauris pulvinar, sem sit amet sollicitudin interdum, nibh mi efficitur ex, id
-                                        scelerisque est nunc sed ante. Pellentesque sodales feugiat orci vel bibendum.
-                                        Nunc sit amet magna blandit, convallis nunc et, malesuada ante. Vestibulum nisl
-                                        mi, facilisis nec massa vitae, posuere efficitur quam. Vivamus eget diam commodo,
-                                        tempus velit eget, consequat orci. Sed fringilla odio et dictum mollis.
-                                    </td>
-                                    <td>Yes/No</td>
-                                    <td>56 of BookSize</td>
-                                    <td>56 45,76,98</td>
-                                    <td>
-                                        <a href="#">Imię i nazwisko właściciela</a>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-bookshelf" href="#!">Edit Note</a>
-                                        <a class="btn btn-bookshelf" href="#!">Remove Note</a>
-                                        <a class="btn btn-bookshelf" href="#!">Book details</a>
-                                    </td>
-                                </tr>
-
+                                <c:forEach items="${users}" var="user">
+                                    <tr>
+                                        <td class="table-photo">
+                                            <img class="card-img-top img-table" src="${user.photo}" alt="..." />
+                                        </td>
+                                        <td>${user.username}</td>
+                                        <td>City, Street</td>
+                                        <td>
+                                            <ul>
+                                                <li>Book 1 Title, Author</li>
+                                                <li>Book 2 Title, Author</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-bookshelf" href="#!">Profil Details</a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
                                 </tbody>
                             </table>
                         </div>
@@ -145,28 +104,22 @@
 </div>
 <!-- End of Page Wrapper -->
 
-
 <!-- Bootstrap core JavaScript-->
-<script src="theme/vendor/jquery/jquery.min.js"></script>
-<script src="theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<c:url value="/theme/vendor/jquery/jquery.min.js"/>"></script>
+<script src="<c:url value="/theme/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="theme/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="<c:url value="/theme/vendor/jquery-easing/jquery.easing.min.js"/>"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="theme/js/sb-admin-2.min.js"></script>
-
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="theme/js/scripts.js"></script>
+<script src="<c:url value="/theme/js/sb-admin-2.min.js"/>"></script>
 
 <!-- Page level plugins -->
-<script src="theme/vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="theme/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="<c:url value="/theme/vendor/datatables/jquery.dataTables.min.js"/>"></script>
+<script src="<c:url value="/theme/vendor/datatables/dataTables.bootstrap4.min.js"/>"></script>
 
 <!-- Page level custom scripts -->
-<script src="theme/js/demo/datatables-demo.js"></script>
+<script src="<c:url value="/theme/js/demo/datatables-demo.js"/>"></script>
 </body>
 
 </html>

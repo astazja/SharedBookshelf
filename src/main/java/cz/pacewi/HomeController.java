@@ -26,10 +26,10 @@ public class HomeController {
         return "books/details";
     }
 
-    @RequestMapping("/all")
-    public String all() {
-        return "books/all";
-    }
+//    @RequestMapping("/all")
+//    public String all() {
+//        return "books/all";
+//    }
 
     @RequestMapping("/all/my")
     public String allMy() {
@@ -99,5 +99,10 @@ public class HomeController {
     @RequestMapping("/userList")
     public String userList() {
         return "user/list";
-    } // to edit
+    }
+
+    @RequestMapping("/userDetails")
+    public String userDetails() {
+        return "user/details";
+    }
 }

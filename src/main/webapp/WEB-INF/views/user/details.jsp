@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,9 +39,7 @@
             <div class="container-fluid">
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Edit Reading Progress</h1>
-                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                            class="fas fa-download fa-sm text-white-50"></i>Back to List</a>
+                    <h1 class="h3 mb-0 text-gray-800">Profile Details</h1>
                 </div>
                 <!-- Page Content-->
                 <div class="row">
@@ -50,10 +47,10 @@
                         <!-- Basic Card Example -->
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Book Picture</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Profile Picture</h6>
                             </div>
                             <div class="card-body text-center">
-                                <img class="card-img-top mb-5 mb-md-0" src="theme/assets/img/bookCover/book6.jpg" alt="..." />
+                                <img class="card-img-top mb-5 mb-md-0" src="/theme/assets/img/users/person1.jpg" alt="..." />
                             </div>
                         </div>
                     </div>
@@ -62,60 +59,71 @@
                         <!-- Basic Card Example -->
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Book Details</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Account Details</h6>
                             </div>
                             <div class="card-body">
-                                <form>
-<%--                                <form:form method="post" modelAttribute="book">--%>
-<%--                                    <form:hidden path="id"/>--%>
-                                    <!-- Form Group (title)-->
+                                    <!-- Form Group (username)-->
                                     <div class="mb-3">
-                                        <label class="small mb-1" for="inputTitle">Title</label>
-                                        <div class="form-control" id="inputTitle">title</div>
+                                        <label class="small mb-1" for="username">Username</label>
+                                        <div class="form-control" id="username">value="username"</div>
                                     </div>
                                     <!-- Form Row-->
                                     <div class="row gx-3 mb-3">
-                                        <!-- Form Group (author)-->
+                                        <!-- Form Group (first name)-->
                                         <div class="col-md-6">
-                                            <label class="small mb-1" for="inputAuthor">Author</label>
-                                            <div class="form-control" id="inputAuthor">Valerie</div>
+                                            <label class="small mb-1" for="firstName">First name</label>
+                                            <div class="form-control" id="firstName">value="Valerie"</div>
                                         </div>
-                                        <!-- Form Group (owner)-->
+                                        <!-- Form Group (last name)-->
                                         <div class="col-md-6">
-                                            <label class="small mb-1" for="inputBelong">Belongs to:</label>
-                                            <div class="form-control" id="inputBelong">Luna</div>
+                                            <label class="small mb-1" for="lastName">Last name</label>
+                                            <div class="form-control" id="lastName">value="Luna"></div>
                                         </div>
+                                    </div>
+                                    <!-- Form Row -->
+                                    <div class="row gx-3 mb-3">
+                                        <!-- Form Group (city)-->
+                                        <div class="col-md-6">
+                                            <label class="small mb-1" for="city">City</label>
+                                            <div class="form-control" id="city">value="Warszawa"></div>
+                                        </div>
+                                        <!-- Form Group (street)-->
+                                        <div class="col-md-6">
+                                            <label class="small mb-1" for="location">Street</label>
+                                            <div class="form-control" id="location">value="San Francisco, CA"></div>
+                                        </div>
+                                    </div>
+                                    <!-- Form Row -->
+                                    <div class="row gx-3 mb-3">
+                                        <!-- Form Group (number)-->
+                                        <div class="col-md-6">
+                                            <label class="small mb-1" for="number">Number</label>
+                                            <div class="form-control" id="number">value="23"></div>
+                                        </div>
+                                        <!-- Form Group (post code)-->
+                                        <div class="col-md-6">
+                                            <label class="small mb-1" for="postCode">Post Code</label>
+                                            <div class="form-control" id="postCode"> value="45-987"></div>
+                                        </div>
+                                    </div>
+                                    <!-- Form Group (email address)-->
+                                    <div class="mb-3">
+                                        <label class="small mb-1" for="emailAddress">Email address</label>
+                                        <div class="form-control" id="emailAddress"> value="name@example.com"></div>
                                     </div>
                                     <!-- Form Row-->
                                     <div class="row gx-3 mb-3">
-                                        <!-- Form Group (borrowed)-->
+                                        <!-- Form Group (phone number)-->
                                         <div class="col-md-6">
-                                            <label class="small mb-1" for="inputBorrowed">Borrowed</label>
-                                            <input class="form-control" id="inputBorrowed" type="text" value="Yes/No">
+                                            <label class="small mb-1" for="phone">Phone number</label>
+                                            <div class="form-control" id="phone"> value="555-123-456"></div>
                                         </div>
-                                        <!-- Form Group (Recommend)-->
+                                        <!-- Form Group (agreement)-->
                                         <div class="col-md-6">
-                                            <label class="small mb-1" for="inputRecommend">Recommend</label>
-                                            <input class="form-control" id="inputRecommend" type="text" value="Yes/No">
-                                        </div>
-                                    </div>
-                                    <!-- Form Row-->
-                                    <div class="row gx-3 mb-3">
-                                        <!-- Form Group (Finished)-->
-                                        <div class="col-md-6">
-                                            <label class="small mb-1" for="inputFinished">Finished</label>
-                                            <input class="form-control" id="inputFinished" type="text" value="Yes/No">
-                                        </div>
-                                        <!-- Form Group (ReadTo)-->
-                                        <div class="col-md-6">
-                                            <label class="small mb-1" for="inputReadTo">Read To</label>
-                                            <input class="form-control" id="inputReadTo" type="number" value="456">
+                                            <label class="small mb-1" for="nextLent">Do you agree to let others borrow your books to others?</label>
+                                            <div class="form-control" id="nextLent"> value="Yes/No"></div>
                                         </div>
                                     </div>
-                                    <!-- Save changes button-->
-                                    <button class="btn btn-primary" type="button">Save changes</button>
-<%--                                </form:form>--%>
-                                </form>
                             </div>
                         </div>
                     </div>
