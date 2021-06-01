@@ -75,7 +75,7 @@
                                             </ul>
                                         </td>
                                         <td>
-                                            <a class="btn btn-bookshelf" href="#!">Profil Details</a>
+                                            <a class="btn btn-bookshelf" href="<c:url value="/profile/show/${user.id}"/>">Profil Details</a>
                                         </td>
                                     </tr>
                                 </c:forEach>

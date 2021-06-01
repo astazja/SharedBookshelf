@@ -50,7 +50,7 @@
                                 <h6 class="m-0 font-weight-bold text-primary">Profile Picture</h6>
                             </div>
                             <div class="card-body text-center">
-                                <img class="card-img-top mb-5 mb-md-0" src="/theme/assets/img/users/person1.jpg" alt="..." />
+                                <img class="card-img-top mb-5 mb-md-0" src="<c:out value="${user.photo}"/>" alt="..." />
                             </div>
                         </div>
                     </div>
@@ -65,63 +65,55 @@
                                     <!-- Form Group (username)-->
                                     <div class="mb-3">
                                         <label class="small mb-1" for="username">Username</label>
-                                        <div class="form-control" id="username">value="username"</div>
+                                        <div class="form-control" id="username"><c:out value="${user.username}"/></div>
                                     </div>
                                     <!-- Form Row-->
                                     <div class="row gx-3 mb-3">
                                         <!-- Form Group (first name)-->
                                         <div class="col-md-6">
                                             <label class="small mb-1" for="firstName">First name</label>
-                                            <div class="form-control" id="firstName">value="Valerie"</div>
+                                            <div class="form-control" id="firstName"><c:out value="${user.name}"/></div>
                                         </div>
                                         <!-- Form Group (last name)-->
                                         <div class="col-md-6">
                                             <label class="small mb-1" for="lastName">Last name</label>
-                                            <div class="form-control" id="lastName">value="Luna"></div>
+                                            <div class="form-control" id="lastName"><c:out value="${user.surname}"/></div>
                                         </div>
+                                    </div>
+                                    <!-- Form Group (city)-->
+                                    <div class="mb-3">
+                                        <label class="small mb-1" for="city">City</label>
+                                        <div class="form-control" id="city"><c:out value="${user.city}"/></div>
                                     </div>
                                     <!-- Form Row -->
                                     <div class="row gx-3 mb-3">
-                                        <!-- Form Group (city)-->
-                                        <div class="col-md-6">
-                                            <label class="small mb-1" for="city">City</label>
-                                            <div class="form-control" id="city">value="Warszawa"></div>
-                                        </div>
                                         <!-- Form Group (street)-->
                                         <div class="col-md-6">
                                             <label class="small mb-1" for="location">Street</label>
-                                            <div class="form-control" id="location">value="San Francisco, CA"></div>
+                                            <div class="form-control" id="location"><c:out value="${user.street}"/></div>
                                         </div>
-                                    </div>
-                                    <!-- Form Row -->
-                                    <div class="row gx-3 mb-3">
                                         <!-- Form Group (number)-->
                                         <div class="col-md-6">
                                             <label class="small mb-1" for="number">Number</label>
-                                            <div class="form-control" id="number">value="23"></div>
-                                        </div>
-                                        <!-- Form Group (post code)-->
-                                        <div class="col-md-6">
-                                            <label class="small mb-1" for="postCode">Post Code</label>
-                                            <div class="form-control" id="postCode"> value="45-987"></div>
+                                            <div class="form-control" id="number"><c:out value="${user.number}"/></div>
                                         </div>
                                     </div>
                                     <!-- Form Group (email address)-->
                                     <div class="mb-3">
                                         <label class="small mb-1" for="emailAddress">Email address</label>
-                                        <div class="form-control" id="emailAddress"> value="name@example.com"></div>
+                                        <div class="form-control" id="emailAddress"><c:out value="${user.email}"/></div>
                                     </div>
                                     <!-- Form Row-->
                                     <div class="row gx-3 mb-3">
                                         <!-- Form Group (phone number)-->
                                         <div class="col-md-6">
                                             <label class="small mb-1" for="phone">Phone number</label>
-                                            <div class="form-control" id="phone"> value="555-123-456"></div>
+                                            <div class="form-control" id="phone"><c:out value="${user.phoneNumber}"/></div>
                                         </div>
                                         <!-- Form Group (agreement)-->
                                         <div class="col-md-6">
-                                            <label class="small mb-1" for="nextLent">Do you agree to let others borrow your books to others?</label>
-                                            <div class="form-control" id="nextLent"> value="Yes/No"></div>
+                                            <label class="small mb-1" for="nextLent">Do you agree to books in circulation?</label>
+                                            <div class="form-control" id="nextLent"><c:out value="${user.consentToNextLent}"/></div>
                                         </div>
                                     </div>
                             </div>

@@ -129,7 +129,7 @@
                                         </div>
                                         <!-- Form Group (agreement)-->
                                         <div class="col-md-6">
-                                            <label class="small mb-1" for="inputNextLent">Do you agree to let others borrow your books to others?</label>
+                                            <label class="small mb-1" for="inputNextLent">Do you agree to books in circulation?</label>
                                             <form:checkbox class="form-control" id="inputNextLent" path="consentToNextLent"/>
                                             <form:errors path="consentToNextLent"/>
                                         </div>

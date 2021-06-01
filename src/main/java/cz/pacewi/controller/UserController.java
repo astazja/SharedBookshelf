@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
 
 @Controller
@@ -49,6 +50,16 @@ public class UserController {
             return "/user/edit";
         }
         userService.updateUser(user);
+        return "redirect:/profile/all";
+    }
+    @GetMapping("/show/{id}")
+    public String showUser(@PathVariable Long id, Model model) {
+        model.addAttribute("user", userService.getUser(id).orElseThrow(EntityNotFoundException::new));
+        return "/user/details";
+    }
+    @GetMapping("/delete/{id}")
+    public String deleteUser(@PathVariable Long id) {
+        userService.removeUser(id);
         return "redirect:/profile/all";
     }
 }
