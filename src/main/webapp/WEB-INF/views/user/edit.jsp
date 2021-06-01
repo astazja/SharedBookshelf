@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,72 +69,74 @@
                                 <h6 class="m-0 font-weight-bold text-primary">Account Details</h6>
                             </div>
                             <div class="card-body">
-                                <form>
+                                <form:form action="/profile/update" method="post" modelAttribute="user">
+                                    <form:hidden path="id"/>
                                     <!-- Form Group (username)-->
                                     <div class="mb-3">
                                         <label class="small mb-1" for="inputUsername">Username (how your name will appear to other users on the site)</label>
-                                        <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="username">
+                                        <form:input class="form-control" id="inputUsername" path="username"/>
+                                        <form:errors path="username"/>
                                     </div>
                                     <!-- Form Row-->
                                     <div class="row gx-3 mb-3">
                                         <!-- Form Group (first name)-->
                                         <div class="col-md-6">
                                             <label class="small mb-1" for="inputFirstName">First name</label>
-                                            <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="Valerie">
+                                            <form:input class="form-control" id="inputFirstName" path="name"/>
+                                            <form:errors path="name"/>
                                         </div>
                                         <!-- Form Group (last name)-->
                                         <div class="col-md-6">
                                             <label class="small mb-1" for="inputLastName">Last name</label>
-                                            <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="Luna">
+                                            <form:input class="form-control" id="inputLastName" path="surname"/>
+                                            <form:errors path="surname"/>
                                         </div>
+                                    </div>
+                                    <!-- Form Group (city)-->
+                                    <div class="mb-3">
+                                        <label class="small mb-1" for="inputCity">City</label>
+                                        <form:input class="form-control" id="inputCity" path="city"/>
+                                        <form:errors path="city"/>
                                     </div>
                                     <!-- Form Row        -->
                                     <div class="row gx-3 mb-3">
-                                        <!-- Form Group (city)-->
-                                        <div class="col-md-6">
-                                            <label class="small mb-1" for="inputCity">City</label>
-                                            <input class="form-control" id="inputCity" type="text" placeholder="Enter your city" value="Warszawa">
-                                        </div>
                                         <!-- Form Group (street)-->
                                         <div class="col-md-6">
                                             <label class="small mb-1" for="inputLocation">Street</label>
-                                            <input class="form-control" id="inputLocation" type="text" placeholder="Enter your street" value="San Francisco, CA">
+                                            <form:input class="form-control" id="inputLocation" path="street"/>
+                                            <form:errors path="street"/>
                                         </div>
-                                    </div>
-                                    <!-- Form Row        -->
-                                    <div class="row gx-3 mb-3">
                                         <!-- Form Group (number)-->
                                         <div class="col-md-6">
                                             <label class="small mb-1" for="inputNumber">Number</label>
-                                            <input class="form-control" id="inputNumber" type="number" placeholder="Enter your number" value="23">
-                                        </div>
-                                        <!-- Form Group (post code)-->
-                                        <div class="col-md-6">
-                                            <label class="small mb-1" for="inputPostCode">Post Code</label>
-                                            <input class="form-control" id="inputPostCode" type="text" placeholder="Enter your post code" value="45-987">
+                                            <form:input class="form-control" id="inputNumber" path="number"/>
+                                            <form:errors path="number"/>
                                         </div>
                                     </div>
                                     <!-- Form Group (email address)-->
                                     <div class="mb-3">
                                         <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                                        <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
+                                        <form:input class="form-control" id="inputEmailAddress" path="email"/>
+                                        <form:errors path="email"/>
                                     </div>
                                     <!-- Form Row-->
                                     <div class="row gx-3 mb-3">
                                         <!-- Form Group (phone number)-->
                                         <div class="col-md-6">
                                             <label class="small mb-1" for="inputPhone">Phone number</label>
-                                            <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="555-123-456">
+                                            <form:input class="form-control" id="inputPhone" path="phoneNumber"/>
+                                            <form:errors path="phoneNumber"/>
                                         </div>
                                         <!-- Form Group (agreement)-->
                                         <div class="col-md-6">
                                             <label class="small mb-1" for="inputNextLent">Do you agree to let others borrow your books to others?</label>
-                                            <input class="form-control" id="inputNextLent" type="text" name="birthday" placeholder="Enter your birthday" value="Yes/No">
+                                            <form:checkbox class="form-control" id="inputNextLent" path="consentToNextLent"/>
+                                            <form:errors path="consentToNextLent"/>
                                         </div>
                                     </div>
                                     <!-- Save changes button-->
-                                    <button class="btn btn-primary" type="button">Save changes</button>
-                                </form>
+                                    <button class="btn btn-primary" type="submit">Save changes</button>
+                                </form:form>
                             </div>
                         </div>
                     </div>

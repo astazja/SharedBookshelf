@@ -40,6 +40,11 @@
                         </div>
                         <form:form class="user" method="post" modelAttribute="user">
                             <form:hidden path="id"/>
+                            <div class="form-group">
+                                <form:input class="form-control form-control-user"
+                                            id="inputNick" placeholder="Username" path="username"/>
+                                <form:errors path="username"/>
+                            </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <form:input class="form-control form-control-user" id="firstName"
@@ -62,16 +67,21 @@
                                        placeholder="Phone Number" path="phoneNumber"/>
                                 <form:errors path="phoneNumber"/>
                             </div>
+                            <div class="form-group">
+                                <form:input class="form-control form-control-user"
+                                            id="inputCity" placeholder="City" path="city"/>
+                                <form:errors path="city"/>
+                            </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <form:input class="form-control form-control-user"
-                                           id="inputCity" placeholder="City" path="city"/>
-                                    <form:errors path="city"/>
+                                                id="inputStreet" placeholder="Street" path="street"/>
+                                    <form:errors path="street"/>
                                 </div>
                                 <div class="col-sm-6">
                                     <form:input class="form-control form-control-user"
-                                           id="inputStreet" placeholder="Street" path="street"/>
-                                    <form:errors path="surname"/>
+                                                id="inputNumber" placeholder="Street Number" path="number"/>
+                                    <form:errors path="number"/>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -79,9 +89,9 @@
                                             id="inputPassword" placeholder="Password" path="password"/>
                                 <form:errors path="password"/>
                             </div>
-                            <a href="login.html" class="btn btn-primary btn-user btn-block">
+                            <button class="btn btn-primary btn-user btn-block" type="submit">
                                 Register Account
-                            </a>
+                            </button>
                         </form:form>
                         <hr>
                         <div class="text-center">
