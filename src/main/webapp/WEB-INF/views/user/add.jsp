@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="<c:url value="theme/css/sb-admin-2.min.css"/>" rel="stylesheet">
+    <link href="<c:url value="/theme/css/sb-admin-2.min.css"/>" rel="stylesheet">
 
 </head>
 
@@ -37,46 +38,51 @@
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                         </div>
-                        <form class="user">
+                        <form:form class="user" method="post" modelAttribute="user">
+                            <form:hidden path="id"/>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                           placeholder="First Name">
+                                    <form:input class="form-control form-control-user" id="firstName"
+                                           placeholder="First Name" path="name"/>
+                                    <form:errors path="name"/>
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                           placeholder="Last Name">
+                                    <form:input class="form-control form-control-user" id="lastName"
+                                           placeholder="Last Name" path="surname"/>
+                                    <form:errors path="surname"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                       placeholder="Email Address">
+                                <form:input class="form-control form-control-user" id="inputEmail"
+                                       placeholder="Email Address" path="email"/>
+                                <form:errors path="email"/>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="exampleInputPhone"
-                                       placeholder="Phone Number">
+                                <form:input class="form-control form-control-user" id="inputPhone"
+                                       placeholder="Phone Number" path="phoneNumber"/>
+                                <form:errors path="phoneNumber"/>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="password" class="form-control form-control-user"
-                                           id="exampleInputPassword" placeholder="Password">
+                                    <form:input class="form-control form-control-user"
+                                           id="inputCity" placeholder="City" path="city"/>
+                                    <form:errors path="city"/>
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="password" class="form-control form-control-user"
-                                           id="exampleRepeatPassword" placeholder="Repeat Password">
+                                    <form:input class="form-control form-control-user"
+                                           id="inputStreet" placeholder="Street" path="street"/>
+                                    <form:errors path="surname"/>
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <form:input type="password" class="form-control form-control-user"
+                                            id="inputPassword" placeholder="Password" path="password"/>
+                                <form:errors path="password"/>
                             </div>
                             <a href="login.html" class="btn btn-primary btn-user btn-block">
                                 Register Account
                             </a>
-                            <hr>
-                            <a href="index.html" class="btn btn-google btn-user btn-block">
-                                <i class="fab fa-google fa-fw"></i> Register with Google
-                            </a>
-                            <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                            </a>
-                        </form>
+                        </form:form>
                         <hr>
                         <div class="text-center">
                             <a class="small" href="forgot-password.html">Forgot Password?</a>

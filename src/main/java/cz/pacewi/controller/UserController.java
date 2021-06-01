@@ -1,22 +1,40 @@
 package cz.pacewi.controller;
 
-import cz.pacewi.repository.UserRepository;
+import cz.pacewi.model.User;
+import cz.pacewi.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
+
 @Controller
-@RequestMapping("/")
+@RequestMapping("/profile")
 @RequiredArgsConstructor
 public class UserController {
 
-    private final UserRepository userRepository;
+    private final UserService userService;
 
-    @GetMapping("/allUser")
+    @GetMapping("/all")
     public String all(Model model) {
-        model.addAttribute("users", userRepository.findAll());
-        return "user/list";
+        model.addAttribute("users", userService.allUsers());
+        return "/user/list";
+    }
+    @GetMapping("/add")
+    public String addUser(Model model) {
+        model.addAttribute("user", new User());
+        return "/user/add";
+    }
+    @PostMapping("/add")
+    public String saveUser(@Valid User user, BindingResult result) {
+        if (result.hasErrors()) {
+            return "/user/add";
+        }
+        userService.addUser(user);
+        return "redirect:/profile/all";
     }
 }

@@ -31,8 +31,15 @@ public class User {
     @Email
     private String email;
     private Boolean consentToNextLent;
-    @OneToOne(optional = false)
-    private Address address;
+    @NotNull
+    @Size(min = 2, max = 30)
+    private String city;
+    @NotNull
+    @Size(min = 2, max = 30)
+    private String street;
+    @NotNull
+    @Digits(integer = 4, fraction = 0)
+    private String number;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Role> roles;
 }

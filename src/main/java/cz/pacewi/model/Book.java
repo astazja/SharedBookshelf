@@ -1,6 +1,7 @@
 package cz.pacewi.model;
 
 import lombok.Data;
+import org.hibernate.mapping.ToOne;
 import org.hibernate.validator.constraints.ISBN;
 
 import javax.persistence.*;
@@ -9,7 +10,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -41,12 +44,10 @@ public class Book {
     private Boolean recommend;
     private Boolean finished;
     private Integer readTo;
-    @OneToOne
-    @JoinColumn(name = "owner_id", unique = true)
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
     private User owner;
-    @OneToMany
-    @JoinColumn(name = "id_user_lent")
-    private List<User> toWhomLent = new ArrayList<>();
     private String bookshelf; //gdzie leży książka na której półce opis
-
+    @OneToMany(mappedBy = "whatBooksBorrowed")
+    private Set<BooksBorrowed> history = new HashSet<>();
 }

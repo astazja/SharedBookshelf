@@ -5,6 +5,10 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.Future;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -13,13 +17,10 @@ public class BooksBorrowed {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
-    @JoinColumn(name = "id_books_borrowed")
     private Book whatBooksBorrowed;
-    @Future
-    private LocalDateTime untilWhen;
-    @OneToOne(optional = false)
+    @ManyToOne
     private User byWhom;
-    @OneToOne(optional = false)
+    @ManyToOne
     private User fromWho;
     @Future
     private LocalDateTime bookBack;

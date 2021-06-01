@@ -75,7 +75,10 @@
                     <td>
                         <a href="#">${book.owner.name} ${book.owner.surname}</a>
                     </td>
-                    <td>2011/04/25 or now</td>
+                    <td>2012/21/12
+<%--                            ${book.history}--%>
+<%--                            ${book.history[0].bookBack}--%>
+                    </td>
                     <td>
                         <a class="btn btn-bookshelf" href="<c:url value="/book/show/${book.id}"/>">Details</a>
                         <a class="btn btn-bookshelf" href="#!">Borrow</a>

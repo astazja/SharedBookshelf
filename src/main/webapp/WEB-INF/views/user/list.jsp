@@ -67,7 +67,7 @@
                                             <img class="card-img-top img-table" src="${user.photo}" alt="..." />
                                         </td>
                                         <td>${user.username}</td>
-                                        <td>City, Street</td>
+                                        <td>City: ${user.city}, <br> Street: ${user.street}</td>
                                         <td>
                                             <ul>
                                                 <li>Book 1 Title, Author</li>
