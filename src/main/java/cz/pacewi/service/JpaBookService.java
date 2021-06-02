@@ -40,4 +40,9 @@ public class JpaBookService implements BookService{
     public void removeBook(Long id) {
         bookRepository.deleteById(id);
     }
+
+    @Override
+    public Book getBookById(Long id) {
+        return bookRepository.getById(id);
+    }
 }

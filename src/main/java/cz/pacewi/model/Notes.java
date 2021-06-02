@@ -1,6 +1,7 @@
 package cz.pacewi.model;
 
 import lombok.Data;
+import org.hibernate.mapping.ToOne;
 
 import javax.persistence.*;
 
@@ -14,10 +15,11 @@ public class Notes {
     private String noteDescription;
     private String photo;
     private String importantPages;
-    @OneToOne
-    @JoinColumn(name = "book_id", unique = true)
+    @ManyToOne
+    @JoinColumn(name = "book_id")
     private Book bookNotes;
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User booksNotes;
 
 }

@@ -61,71 +61,36 @@
                                     <th>Book finished</th>
                                     <th>Read to</th>
                                     <th>Important page</th>
-                                    <th>Belongs to:</th>
+                                    <th>Book belongs to:</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td class="table-photo">
-                                        <img class="card-img-top img-table" src="theme/assets/img/notes/note1.jpg" alt="..." />
-                                    </td>
-                                    <td>System Architect</td>
-                                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ultricies
-                                        sodales ante vitae lacinia. Integer ut est orci. Vivamus mauris nunc, dictum a
-                                        vehicula et, gravida nec lorem. Curabitur elementum dictum dui nec pharetra.
-                                        Mauris pulvinar, sem sit amet sollicitudin interdum, nibh mi efficitur ex, id
-                                        scelerisque est nunc sed ante. Pellentesque sodales feugiat orci vel bibendum.
-                                        Nunc sit amet magna blandit, convallis nunc et, malesuada ante. Vestibulum nisl
-                                        mi, facilisis nec massa vitae, posuere efficitur quam. Vivamus eget diam commodo,
-                                        tempus velit eget, consequat orci. Sed fringilla odio et dictum mollis.
-                                    </td>
-                                    <td>Yes/No</td>
-                                    <td>56 of BookSize</td>
-                                    <td>56, 45, 76, 98</td>
-                                    <td>
-                                        <a href="#">Imię i nazwisko właściciela</a>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-bookshelf" href="#!">Edit Note</a>
-                                        <a class="btn btn-bookshelf" href="#!">Remove Note</a>
-                                        <a class="btn btn-bookshelf" href="#!">Book details</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="table-photo">
-                                        <img class="card-img-top img-table" src="theme/assets/img/notes/note2.jpg" alt="..." />
-                                    </td>
-                                    <td>System Architect</td>
-                                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ultricies
-                                        sodales ante vitae lacinia. Integer ut est orci. Vivamus mauris nunc, dictum a
-                                        vehicula et, gravida nec lorem. Curabitur elementum dictum dui nec pharetra.
-                                        Mauris pulvinar, sem sit amet sollicitudin interdum, nibh mi efficitur ex, id
-                                        scelerisque est nunc sed ante. Pellentesque sodales feugiat orci vel bibendum.
-                                        Nunc sit amet magna blandit, convallis nunc et, malesuada ante. Vestibulum nisl
-                                        mi, facilisis nec massa vitae, posuere efficitur quam. Vivamus eget diam commodo,
-                                        tempus velit eget, consequat orci. Sed fringilla odio et dictum mollis.
-                                    </td>
-                                    <td>Yes/No</td>
-                                    <td>56 of BookSize</td>
-                                    <td>56 45,76,98</td>
-                                    <td>
-                                        <a href="#">Imię i nazwisko właściciela</a>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-bookshelf" href="#!">Edit Note</a>
-                                        <a class="btn btn-bookshelf" href="#!">Remove Note</a>
-                                        <a class="btn btn-bookshelf" href="#!">Book details</a>
-                                    </td>
-                                </tr>
-
+                                <c:forEach items="${notes}" var="note">
+                                    <tr>
+                                        <td class="table-photo">
+                                            <img class="card-img-top img-table" src="${note.photo}" alt="..."/>
+                                        </td>
+                                        <td>${note.noteTitle}</td>
+                                        <td>${note.noteDescription}</td>
+                                        <td>${note.bookNotes.finished}</td>
+                                        <td>${note.bookNotes.readTo} of BookSize</td>
+                                        <td>${note.importantPages}</td>
+                                        <td>
+                                            <a href="#">${note.bookNotes.owner.name} ${note.bookNotes.owner.surname}</a>
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-bookshelf" href="#!">Edit Note</a>
+                                            <a class="btn btn-bookshelf" href="#!">Remove Note</a>
+                                            <a class="btn btn-bookshelf" href="#!">Book details</a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-
-
             </div>
             <!-- /.container-fluid -->
         </div>

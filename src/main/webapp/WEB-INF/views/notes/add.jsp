@@ -71,29 +71,30 @@
                                 <h6 class="m-0 font-weight-bold text-primary">Note Details</h6>
                             </div>
                             <div class="card-body">
-                                <form>
-<%--                                <form:form method="post" modelAttribute="book">--%>
-<%--                                    <form:hidden path="id"/>--%>
+                                <form:form method="post" modelAttribute="note">
+                                    <form:hidden path="id"/>
                                     <!-- Form Group (title)-->
                                     <div class="mb-3">
                                         <label class="small mb-1" for="inputTitle">Title</label>
-                                        <input class="form-control" id="inputTitle" type="text" value="title">
+                                        <form:input class="form-control" id="inputTitle" path="noteTitle"/>
+                                        <form:errors path="noteTitle"/>
                                     </div>
                                     <!-- Form Group (description)-->
                                     <div class="mb-3">
                                         <label class="small mb-1" for="inputDescription">Description</label>
-                                        <textarea class="form-control" id="inputDescription" cols="50" rows="4">Leży obok akwarium dobra książka</textarea>
+                                        <form:textarea class="form-control" id="inputDescription" cols="12" rows="4" path="noteDescription"/>
+                                        <form:errors path="noteDescription"/>
                                     </div>
                                     <!-- Form Group (Pages)-->
                                     <div class="mb-3">
                                         <label class="small mb-1" for="inputPages">Parties which relates to the note</label>
-                                        <input class="form-control" id="inputPages" type="text" value="12,34,54">
+                                        <form:input class="form-control" id="inputPages" path="importantPages"/>
+                                        <form:errors path="importantPages"/>
                                     </div>
-
                                     <!-- Save changes button-->
-                                    <button class="btn btn-primary" type="button">Save note</button>
+                                    <button class="btn btn-primary" type="submit">Save note</button>
 <%--                                </form:form>--%>
-                                </form>
+                                </form:form>
                             </div>
                         </div>
                     </div>
