@@ -47,5 +47,19 @@ public class NoteController {
         noteService.addNote(notes);
         return "redirect:/notes/allBooks";
     }
-
+    @GetMapping("/book{bookId}/edit/{noteId}")
+    public String editNote(@PathVariable Long bookId, @PathVariable Long noteId, Model model) {
+        model.addAttribute("book", bookService.getBook(bookId));
+        model.addAttribute("note", noteService.getNote(noteId));
+        return "/notes/edit";
+    }
+    @PostMapping("/book{id}/update")
+    public String updateNote(@PathVariable Long id, @Valid Notes note, BindingResult result) {
+        if(result.hasErrors()) {
+            return "/notes/edit";
+        }
+        note.setBookNotes(bookService.getBookById(id));
+        noteService.updateNote(note);
+        return "redirect:/notes/allBooks";
+    }
 }

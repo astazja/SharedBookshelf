@@ -76,13 +76,13 @@
                                     <form:hidden path="id"/>
                                     <!-- Form Group (Book title)-->
                                     <div class="mb-3">
-                                        <label class="small mb-1" for="inputBookTitle">Title</label>
+                                        <label class="small mb-1" for="inputBookTitle">Book Title</label>
                                         <form:select class="form-control" id="inputBookTitle" path="bookNotes" items="${books}" itemLabel="title" itemValue="id"/>
                                         <form:errors path="bookNotes"/>
                                     </div>
                                     <!-- Form Group (title)-->
                                     <div class="mb-3">
-                                        <label class="small mb-1" for="inputTitle">Title</label>
+                                        <label class="small mb-1" for="inputTitle">Note Title</label>
                                         <form:input class="form-control" id="inputTitle" path="noteTitle"/>
                                         <form:errors path="noteTitle"/>
                                     </div>

@@ -71,29 +71,38 @@
                                 <h6 class="m-0 font-weight-bold text-primary">Note Details</h6>
                             </div>
                             <div class="card-body">
-                                <form>
-<%--                                <form:form method="post" modelAttribute="book">--%>
-<%--                                    <form:hidden path="id"/>--%>
+                                <form:form action="/notes/book${book.get().id}/update" method="post" modelAttribute="note">
+                                    <form:hidden path="id"/>
+                                    <!-- Form Group (Book title)-->
+                                    <div class="mb-3">
+                                        <label class="small mb-1" for="bookTitle">Book Title</label>
+                                        <div class="form-control" id="bookTitle"><c:out value="${book.get().title}"/>
+<%--                                        <form:select class="form-control" id="bookTitle" path="bookNotes" items="${books}" itemLabel="title" itemValue="id"/>--%>
+<%--                                        <form:errors path="bookNotes"/>--%>
+                                        </div>
+
+
                                     <!-- Form Group (title)-->
                                     <div class="mb-3">
-                                        <label class="small mb-1" for="inputTitle">Title</label>
-                                        <input class="form-control" id="inputTitle" type="text" value="title">
+                                        <label class="small mb-1" for="inputTitle">Note Title</label>
+                                        <form:input class="form-control" id="inputTitle" path="noteTitle"/>
+                                        <form:errors path="noteTitle"/>
                                     </div>
                                     <!-- Form Group (description)-->
                                     <div class="mb-3">
                                         <label class="small mb-1" for="inputDescription">Description</label>
-                                        <textarea class="form-control" id="inputDescription" cols="50" rows="4">Leży obok akwarium dobra książka</textarea>
+                                        <form:textarea class="form-control" id="inputDescription" cols="12" rows="4" path="noteDescription"/>
+                                        <form:errors path="noteDescription"/>
                                     </div>
                                     <!-- Form Group (Pages)-->
                                     <div class="mb-3">
                                         <label class="small mb-1" for="inputPages">Parties which relates to the note</label>
-                                        <input class="form-control" id="inputPages" type="text" value="12,34,54">
+                                        <form:input class="form-control" id="inputPages" path="importantPages"/>
+                                        <form:errors path="importantPages"/>
                                     </div>
-
                                     <!-- Save changes button-->
-                                    <button class="btn btn-primary" type="button">Save changes</button>
-<%--                                </form:form>--%>
-                                </form>
+                                    <button class="btn btn-primary" type="submit">Save changes</button>
+                                </form:form>
                             </div>
                         </div>
                     </div>

@@ -21,5 +21,4 @@ public class Notes {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User booksNotes;
-
 }
