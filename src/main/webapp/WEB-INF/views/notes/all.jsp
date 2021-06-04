@@ -71,7 +71,7 @@
                                         <td>${note.bookNotes.author}</td>
                                         <td>${note.bookNotes.genre}</td>
                                         <td>
-                                            <a href="#">${note.bookNotes.owner.name} ${note.bookNotes.owner.surname}</a>
+                                            <a href="<c:url value="/profile/show/${note.bookNotes.owner.id}"/>">${note.bookNotes.owner.name} ${note.bookNotes.owner.surname}</a>
                                         </td>
                                         <td>
                                             <a class="btn btn-bookshelf" href="<c:url value="/notes/book${note.bookNotes.id}/list"/>">List of Notes</a>

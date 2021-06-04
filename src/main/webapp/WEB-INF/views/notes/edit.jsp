@@ -41,7 +41,7 @@
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">Edit Note</h1>
-                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                    <a href="<c:url value="/notes/book${book.get().id}/list"/>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i>Back to List</a>
                 </div>
                 <!-- Page Content-->
@@ -76,12 +76,9 @@
                                     <!-- Form Group (Book title)-->
                                     <div class="mb-3">
                                         <label class="small mb-1" for="bookTitle">Book Title</label>
-                                        <div class="form-control" id="bookTitle"><c:out value="${book.get().title}"/>
-<%--                                        <form:select class="form-control" id="bookTitle" path="bookNotes" items="${books}" itemLabel="title" itemValue="id"/>--%>
-<%--                                        <form:errors path="bookNotes"/>--%>
+                                        <div class="form-control" id="bookTitle">
+                                            <c:out value="${book.get().title}"/>
                                         </div>
-
-
                                     <!-- Form Group (title)-->
                                     <div class="mb-3">
                                         <label class="small mb-1" for="inputTitle">Note Title</label>

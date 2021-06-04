@@ -77,11 +77,11 @@
                                         <td>${note.bookNotes.readTo} of BookSize</td>
                                         <td>${note.importantPages}</td>
                                         <td>
-                                            <a href="#">${note.bookNotes.owner.name} ${note.bookNotes.owner.surname}</a>
+                                            <a href="<c:url value="/profile/show/${note.bookNotes.owner.id}"/>">${note.bookNotes.owner.name} ${note.bookNotes.owner.surname}</a>
                                         </td>
                                         <td>
-                                            <a class="btn btn-bookshelf" href="#!">Edit Note</a>
-                                            <a class="btn btn-bookshelf" href="#!">Remove Note</a>
+                                            <a class="btn btn-bookshelf" href="<c:url value="/notes/book${note.bookNotes.id}/edit/${note.id}"/>">Edit Note</a>
+                                            <a class="btn btn-bookshelf" href="<c:url value="/notes/delete/${note.id}"/>">Remove Note</a>
                                             <a class="btn btn-bookshelf" href="<c:url value="/book/show/${note.bookNotes.id}"/>">Book details</a>
                                         </td>
                                     </tr>

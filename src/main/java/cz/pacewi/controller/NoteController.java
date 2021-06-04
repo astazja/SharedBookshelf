@@ -62,4 +62,9 @@ public class NoteController {
         noteService.updateNote(note);
         return "redirect:/notes/allBooks";
     }
+    @GetMapping("/delete/{id}")
+    public String deleteNote(@PathVariable Long id) {
+        noteService.removeNote(id);
+        return "redirect:/notes/allBooks";
+    }
 }
