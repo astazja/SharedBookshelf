@@ -39,8 +39,8 @@
             <div class="container-fluid">
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">List of Notes for the Book of the Title: <em>tytul</em></h1>
-                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                    <h1 class="h3 mb-0 text-gray-800">List of Notes for the Book of the Title: <c:forEach items="${notes}" var="noteTitle" begin="0" end="0"><em>${noteTitle.bookNotes.title}</em></c:forEach></h1>
+                    <a href="<c:url value="/notes/add"/>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i>Add Note</a>
                 </div>
 
@@ -82,7 +82,7 @@
                                         <td>
                                             <a class="btn btn-bookshelf" href="#!">Edit Note</a>
                                             <a class="btn btn-bookshelf" href="#!">Remove Note</a>
-                                            <a class="btn btn-bookshelf" href="#!">Book details</a>
+                                            <a class="btn btn-bookshelf" href="<c:url value="/book/show/${note.bookNotes.id}"/>">Book details</a>
                                         </td>
                                     </tr>
                                 </c:forEach>

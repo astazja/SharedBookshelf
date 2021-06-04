@@ -1,6 +1,5 @@
 package cz.pacewi.controller;
 
-import cz.pacewi.model.Book;
 import cz.pacewi.model.Notes;
 import cz.pacewi.service.BookService;
 import cz.pacewi.service.NoteService;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/notes")
@@ -29,13 +29,14 @@ public class NoteController {
         return "/notes/all";
     }
     @GetMapping("/book{id}/list")
-    public String showBookNotes(@PathVariable long id, Model model) {
+    public String showBookNotes(@PathVariable Long id, Model model) {
         model.addAttribute("notes", noteService.findByBookNotes(bookService.getBookById(id)));
         return "/notes/list";
     }
     @GetMapping("/add")
-    public String addNote(Model model) {
+    public String addNote( Model model) {
         model.addAttribute("note", new Notes());
+        model.addAttribute("books", bookService.allBooks());
         return "/notes/add";
     }
     @PostMapping("/add")
@@ -44,6 +45,7 @@ public class NoteController {
             return "/notes/add";
         }
         noteService.addNote(notes);
-        return "redirect:/notes/list";
+        return "redirect:/notes/allBooks";
     }
+
 }

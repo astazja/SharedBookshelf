@@ -62,38 +62,24 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td class="table-photo">
-                                        <img class="card-img-top img-table" src="theme/assets/img/bookCover/book6.jpg" alt="..." />
-                                    </td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>
-                                        <a href="#">Imię i nazwisko właściciela</a>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-bookshelf" href="#!">List of Notes</a>
-                                        <a class="btn btn-bookshelf" href="#!">Add Note</a>
-                                        <a class="btn btn-bookshelf" href="#!">Book details</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="table-photo">
-                                        <img class="card-img-top img-table" src="theme/assets/img/bookCover/book9.jpg" alt="..." />
-                                    </td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>
-                                        <a href="#">Imię i nazwisko właściciela</a>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-bookshelf" href="#!">List of Notes</a>
-                                        <a class="btn btn-bookshelf" href="#!">Add Note</a>
-                                        <a class="btn btn-bookshelf" href="#!">Book details</a>
-                                    </td>
-                                </tr>
+                                <c:forEach items="${notes}" var="note">
+                                    <tr>
+                                        <td class="table-photo">
+                                            <img class="card-img-top img-table" src="${note.bookNotes.photo}" alt="..." />
+                                        </td>
+                                        <td>${note.bookNotes.title}</td>
+                                        <td>${note.bookNotes.author}</td>
+                                        <td>${note.bookNotes.genre}</td>
+                                        <td>
+                                            <a href="#">${note.bookNotes.owner.name} ${note.bookNotes.owner.surname}</a>
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-bookshelf" href="<c:url value="/notes/book${note.bookNotes.id}/list"/>">List of Notes</a>
+                                            <a class="btn btn-bookshelf" href="<c:url value="/notes/add"/>">Add Note</a>
+                                            <a class="btn btn-bookshelf" href="<c:url value="/book/show/${note.bookNotes.id}"/>">Book details</a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
                                 </tbody>
                             </table>
                         </div>

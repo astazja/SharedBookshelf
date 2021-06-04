@@ -41,8 +41,9 @@
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">Add Note</h1>
-                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                            class="fas fa-download fa-sm text-white-50"></i>Back to List</a>
+                    <a href="<c:url value="/notes/allBooks"/>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                        Back to List
+                    </a>
                 </div>
                 <!-- Page Content-->
                 <div class="row">
@@ -73,6 +74,12 @@
                             <div class="card-body">
                                 <form:form method="post" modelAttribute="note">
                                     <form:hidden path="id"/>
+                                    <!-- Form Group (Book title)-->
+                                    <div class="mb-3">
+                                        <label class="small mb-1" for="inputBookTitle">Title</label>
+                                        <form:select class="form-control" id="inputBookTitle" path="bookNotes" items="${books}" itemLabel="title" itemValue="id"/>
+                                        <form:errors path="bookNotes"/>
+                                    </div>
                                     <!-- Form Group (title)-->
                                     <div class="mb-3">
                                         <label class="small mb-1" for="inputTitle">Title</label>

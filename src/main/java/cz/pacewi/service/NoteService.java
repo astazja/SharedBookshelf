@@ -15,4 +15,5 @@ public interface NoteService {
     void removeNote(Long id);
     List<Notes> findByBookNotes(Book book);
     List<Notes> findByUserNotes(User user);
+
 }
