@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,8 +47,8 @@
 <section class="content-section bg-primary text-white" id="login">
     <div class="container px-4 px-lg-5 text-center">
         <h2 class="mb-4">The buttons below are impossible to resist...</h2>
-        <a class="btn btn-xl btn-light me-4" href="#!">Log in</a>
-        <a class="btn btn-xl btn-dark" href="#!">Sign Up</a>
+        <a class="btn btn-xl btn-light me-4" href="<c:url value="/login"/>">Log in</a>
+        <a class="btn btn-xl btn-dark" href="<c:url value="/profile/add"/>">Sign Up</a>
     </div>
 </section>
 <!-- About-->
@@ -107,7 +108,12 @@
 <section class="content-section" id="bookshelf">
     <div class="container px-4 px-lg-5">
         <div class="content-section-heading text-center">
-            <h3 class="text-secondary mb-0"><a class="nav-link" href="<c:url value="/bookshelf"/>">Bookshelf</a></h3>
+            <h3 class="text-secondary mb-0">
+                <sec:authorize access="isAuthenticated()">
+                    <a class="nav-link" href="<c:url value="/book"/>">Your Bookshelf</a>
+                </sec:authorize>
+                <a class="nav-link" href="<c:url value="/bookshelf"/>">Bookshelf</a>
+            </h3>
             <h2 class="mb-5">Recent Books</h2>
         </div>
         <div class="row gx-0">

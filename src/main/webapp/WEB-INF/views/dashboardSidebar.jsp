@@ -30,7 +30,7 @@
     </li>
     <!-- Nav Item - Notes -->
     <li class="nav-item">
-        <a class="nav-link" href="<c:url value="/"/>">
+        <a class="nav-link" href="<c:url value="/notes/allBooks"/>">
             <span>Notes</span>
         </a>
     </li>
@@ -43,10 +43,10 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Books:</h6>
-                <a class="collapse-item" href="buttons.html">All the books</a>
-                <a class="collapse-item" href="cards.html">My list of books</a>
-                <a class="collapse-item" href="cards.html">Lent to someone</a>
-                <a class="collapse-item" href="cards.html">Borrowed from someone</a>
+                <a class="collapse-item" href="<c:url value="/book/all"/>">All the books</a>
+                <a class="collapse-item" href="<c:url value="/all/my"/>">My list of books</a>
+                <a class="collapse-item" href="<c:url value="/lent"/>">Lent to someone</a>
+                <a class="collapse-item" href="<c:url value="/borrow"/>">Borrowed from someone</a>
             </div>
         </div>
     </li>
@@ -60,7 +60,7 @@
     </div>
     <!-- Nav Item - Logout -->
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="<c:url value="/profile/show/${param.id}"/>">
             <span>Profile</span>
         </a>
     </li>
@@ -73,9 +73,9 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Account Modification:</h6>
-                <a class="collapse-item" href="login.html">Edit Data</a>
+                <a class="collapse-item" href="<c:url value="/profile/edit/${param.id}"/>">Edit Data</a>
                 <a class="collapse-item" href="register.html">Change Password</a>
-                <a class="collapse-item" href="register.html">Delete Account</a>
+                <a class="collapse-item" href="<c:url value="/profile/delete/${param.id}"/>">Delete Account</a>
             </div>
         </div>
     </li>
@@ -114,7 +114,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <a class="btn btn-primary" href="<c:url value="/"/>">Logout</a>
             </div>
         </div>
     </div>

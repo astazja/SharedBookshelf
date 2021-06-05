@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,6 +20,7 @@
     <link href="<c:url value="/theme/css/sb-admin-2.css"/>" rel="stylesheet">
 </head>
 <body id="page-top">
+<sec:authorize access="isAuthenticated()">
 <!-- Page Wrapper -->
 <div id="wrapper">
     <!-- Sidebar -->
@@ -192,7 +194,7 @@
 
 <!-- Custom scripts for all pages-->
 <script src="<c:url value="/theme/js/sb-admin-2.min.js"/>"></script>
-
+</sec:authorize>
 </body>
 </html>
 
