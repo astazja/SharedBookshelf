@@ -31,6 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/notes/**").authenticated()
                 .antMatchers("/profile/**").authenticated()
                 .and().formLogin().loginPage("/login")
-                .and().logout().logoutSuccessUrl("/").permitAll();
+                .and().logout().invalidateHttpSession(true).clearAuthentication(true).deleteCookies("JSESSIONID")
+                .logoutSuccessUrl("/").permitAll();
     }
 }
