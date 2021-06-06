@@ -12,4 +12,5 @@ public interface BookService {
     void updateBook(Book book);
     void removeBook(Long id);
     Book getBookById(Long id);
+    List<Book> allMyBooks(Long id);
 }

@@ -4,6 +4,8 @@ import cz.pacewi.model.Book;
 import cz.pacewi.repository.BookRepository;
 import cz.pacewi.repository.UserRepository;
 import cz.pacewi.service.BookService;
+import cz.pacewi.service.BorrowService;
+import cz.pacewi.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +24,14 @@ import javax.validation.Valid;
 public class BookController {
 
     private final BookService bookService;
+    private final BorrowService borrowService;
+
+    @RequestMapping("/user{userId}")
+    public String dashboard(@PathVariable Long userId, Model model) {
+        model.addAttribute("borrowBooks", borrowService.allBorrowBooks(userId));
+        model.addAttribute("books", bookService.allMyBooks(userId));
+        return "books/dashboard";
+    }
 
     @GetMapping("/all")
     public String showBooks(Model model) {
@@ -64,9 +74,4 @@ public class BookController {
         bookService.removeBook(id);
         return "redirect:/book/all";
     }
-
-
-
-
-
 }

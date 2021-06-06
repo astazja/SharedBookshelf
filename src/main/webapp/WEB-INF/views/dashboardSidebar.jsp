@@ -12,7 +12,7 @@
     <hr class="sidebar-divider my-0">
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="<c:url value="/book"/>">
+        <a class="nav-link" href="<c:url value="/book/user1"/>">
             <span>Yours Bookshelf</span>
         </a>
     </li>
@@ -45,8 +45,8 @@
                 <h6 class="collapse-header">Books:</h6>
                 <a class="collapse-item" href="<c:url value="/book/all"/>">All the books</a>
                 <a class="collapse-item" href="<c:url value="/all/my"/>">My list of books</a>
-                <a class="collapse-item" href="<c:url value="/lent"/>">Lent to someone</a>
-                <a class="collapse-item" href="<c:url value="/borrow"/>">Borrowed from someone</a>
+                <a class="collapse-item" href="<c:url value="/book/borrow/all/lent/user1"/>">Lent to someone</a>
+                <a class="collapse-item" href="<c:url value="/book/borrow/all/user1"/>">Borrowed from someone</a>
             </div>
         </div>
     </li>
@@ -60,7 +60,7 @@
     </div>
     <!-- Nav Item - Logout -->
     <li class="nav-item">
-        <a class="nav-link" href="<c:url value="/profile/show/${param.id}"/>">
+        <a class="nav-link" href="<c:url value="/profile/show/1"/>">
             <span>Profile</span>
         </a>
     </li>
@@ -73,7 +73,7 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Account Modification:</h6>
-                <a class="collapse-item" href="<c:url value="/profile/edit/${param.id}"/>">Edit Data</a>
+                <a class="collapse-item" href="<c:url value="/profile/edit/1"/>">Edit Data</a>
                 <a class="collapse-item" href="register.html">Change Password</a>
                 <a class="collapse-item" href="<c:url value="/profile/delete/${param.id}"/>">Delete Account</a>
             </div>

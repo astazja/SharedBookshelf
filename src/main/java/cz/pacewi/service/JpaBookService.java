@@ -45,4 +45,9 @@ public class JpaBookService implements BookService{
     public Book getBookById(Long id) {
         return bookRepository.getById(id);
     }
+
+    @Override
+    public List<Book> allMyBooks(Long id) {
+        return bookRepository.findBookByOwner(id);
+    }
 }

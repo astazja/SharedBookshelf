@@ -1,8 +1,6 @@
 package cz.pacewi.controller;
 
-import cz.pacewi.model.Book;
 import cz.pacewi.model.BooksBorrowed;
-import cz.pacewi.model.User;
 import cz.pacewi.service.BookService;
 import cz.pacewi.service.BorrowService;
 import cz.pacewi.service.UserService;
@@ -16,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
-import java.time.LocalDateTime;
+
 
 @Controller
 @RequestMapping("/book/borrow")
