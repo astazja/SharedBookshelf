@@ -73,7 +73,7 @@
                     <td>${book.genre}</td>
                     <td>${book.pages}</td>
                     <td>
-                        <a href="#">${book.owner.name} ${book.owner.surname}</a>
+                        <a href="<c:url value="/profile/show/${book.owner.id}"/>">${book.owner.name} ${book.owner.surname}</a>
                     </td>
                     <td>2012/21/12
 <%--                            ${book.history}--%>

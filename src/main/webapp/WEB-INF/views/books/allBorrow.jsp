@@ -64,42 +64,26 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <c:forEach items="${books}" var="book">
                                 <tr>
                                     <td class="table-photo">
-                                        <img class="card-img-top img-table" src="theme/assets/img/bookCover/book6.jpg" alt="..." />
+                                        <img class="card-img-top img-table" src="${book.whatBooksBorrowed.photo}" alt="..." />
                                     </td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
+                                    <td>${book.whatBooksBorrowed.title}</td>
+                                    <td>${book.whatBooksBorrowed.author}</td>
+                                    <td>${book.whatBooksBorrowed.genre}</td>
+                                    <td>${book.whatBooksBorrowed.pages}</td>
                                     <td>
-                                        <a href="#">Imię i nazwisko właściciela</a>
+                                        <a href="<c:url value="/profile/show/${book.whatBooksBorrowed.owner.id}"/>">${book.whatBooksBorrowed.owner.name} ${book.whatBooksBorrowed.owner.surname}</a>
                                     </td>
-                                    <td>2011/04/25</td>
+                                    <td>${book.bookBack}</td>
                                     <td>
-                                        <a class="btn btn-bookshelf" href="#!">Details</a>
-                                        <a class="btn btn-bookshelf" href="#!">Make notes</a>
-                                        <a class="btn btn-bookshelf" href="#!">Give Back</a>
+                                        <a class="btn btn-bookshelf" href="<c:url value="/book/show/${book.whatBooksBorrowed.id}"/>">Details</a>
+                                        <a class="btn btn-bookshelf" href="<c:url value="/notes/add"/>">Make notes</a>
+                                        <a class="btn btn-bookshelf" href="<c:url value="/book/borrow/back/${book.id}"/>">Give Back</a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td class="table-photo">
-                                        <img class=" card-img-top img-table" src="theme/assets/img/bookCover/book7.jpg" alt="..." />
-                                    </td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>
-                                        <a href="#">Imię i nazwisko właściciela</a>
-                                    </td>
-                                    <td>2011/04/25 or now</td>
-                                    <td>
-                                        <a class="btn btn-bookshelf" href="#!">Details</a>
-                                        <a class="btn btn-bookshelf" href="#!">Make notes</a>
-                                        <a class="btn btn-bookshelf" href="#!">Give Back</a>
-                                    </td>
-                                </tr>
+                                </c:forEach>
                                 </tbody>
                             </table>
                         </div>

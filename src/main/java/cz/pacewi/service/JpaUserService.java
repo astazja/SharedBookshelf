@@ -59,4 +59,9 @@ public class JpaUserService implements UserService {
     public User findByUserName(String username) {
         return userRepository.findByUsername(username);
     }
+
+    @Override
+    public User getUserById(Long id) {
+        return userRepository.getById(id);
+    }
 }

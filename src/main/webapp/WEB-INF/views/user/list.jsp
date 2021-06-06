@@ -54,7 +54,7 @@
                                 <thead>
                                 <tr>
                                     <th>Photo</th>
-                                    <th>Nick</th>
+                                    <th>First Name Last Name</th>
                                     <th>Address</th>
                                     <th>Books</th>
                                     <th>Action</th>
@@ -66,7 +66,7 @@
                                         <td class="table-photo">
                                             <img class="card-img-top img-table" src="${user.photo}" alt="..." />
                                         </td>
-                                        <td>${user.username}</td>
+                                        <td>${user.name} ${user.surname}</td>
                                         <td>City: ${user.city}, <br> Street: ${user.street}</td>
                                         <td>
                                             <ul>

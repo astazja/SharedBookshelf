@@ -1,6 +1,7 @@
 package cz.pacewi.model;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.Future;
@@ -23,5 +24,6 @@ public class BooksBorrowed {
     @ManyToOne
     private User fromWho;
     @Future
+    @DateTimeFormat(pattern = "yyyy/MM/dd HH:mm:ss")
     private LocalDateTime bookBack;
 }
