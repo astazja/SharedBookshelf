@@ -12,8 +12,6 @@ public class HomeController {
         return "homepage";
     }
 
-
-
     @RequestMapping("/bookshelf")
     public String bookshelf() {
         return "guest/pageBookshelf";
@@ -24,11 +22,13 @@ public class HomeController {
         return "user/login";
     }
 
+
+
+
     @RequestMapping("/all/my")
     public String allMy() {
         return "books/allUserBooks";
     }
-
 
     @RequestMapping("/history")
     public String historyBook() {

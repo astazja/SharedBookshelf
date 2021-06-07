@@ -59,11 +59,9 @@
                                     <span><c:out value="${book.author}"/></span>
                                     <p><c:out value="${book.description}"/></p>
                                     <div class="d-flex">
-                                        <input class="form-control text-center me-3" id="inputQuantity" type="hidden"
-                                               value="1" style="max-width: 3rem"/>
-                                        <button class="btn btn-outline-dark flex-shrink-0 btn-block" type="button">
-                                            Borrow
-                                        </button>
+                                        <a class="btn btn-outline-dark flex-shrink-0 btn-block" href="<c:url value="/book/borrow/${book.id}/add/user1"/>">
+                                        Borrow
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +70,7 @@
 
                                     <div class="p-3 bg-blue-100 text-white border-left-warning profil">
                                         <span class="text-decoration-line-through">Belongs to: </span>
-                                        <span><a href="#"><c:out value="${book.owner.name} ${book.owner.surname}"/></a></span>
+                                        <span><a href="<c:url value="/profile/show/${book.owner.id}"/>"><c:out value="${book.owner.name} ${book.owner.surname}"/></a></span>
                                     </div>
                                     <div class="p-3 bg-blue-200 text-white border-left-warning">
                                         <span class="text-decoration-line-through">Publisher: </span>
@@ -92,7 +90,13 @@
                                     </div>
                                     <div class="p-3 bg-blue-600 text-white border-left-warning profil">
                                         <span class="text-decoration-line-through">Who has one: </span>
-                                        <span><a href="#">Imię i nazwisko właściciela</a></span>
+                                        <c:forEach items="${borrow}" var="book">
+                                            <span>
+                                                <a href="<c:url value="/profile/show/${book.byWhom.id}"/>">
+                                                <c:out value="${book.byWhom.name}"/> <c:out value="${book.byWhom.surname}"/>
+                                                </a>
+                                            </span>
+                                        </c:forEach>
                                     </div>
                                     <div class="p-3 bg-blue-700 text-white border-left-warning">
                                         <span class="text-decoration-line-through">Bookshelf: </span>
@@ -100,11 +104,13 @@
                                     </div>
                                     <div class="p-3 bg-blue-800 text-white border-left-warning profil">
                                         <span class="text-decoration-line-through">Notes: </span>
-                                        <span><a href="#">My notes</a></span>
+                                        <span><a href="<c:url value="/notes/book${book.id}/list"/>">My notes</a></span>
                                     </div>
                                     <div class="p-3 bg-blue-900 text-white border-left-warning">
                                         <span class="text-decoration-line-through">Book back: </span>
-                                        <span>30.05.2021 or The owner has one.</span>
+                                        <c:forEach items="${borrow}" var="book">
+                                        <span><c:out value="${book.bookBack}"/></span>
+                                        </c:forEach>
                                     </div>
                                 </div>
                             </div>

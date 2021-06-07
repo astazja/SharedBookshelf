@@ -17,4 +17,7 @@ public interface BorrowRepository extends JpaRepository<BooksBorrowed, Long> {
     @Query(value = "SELECT * from books_borrowed bb JOIN book b on bb.what_books_borrowed_id = b.id where bb.by_whom_id != b.owner_id and b.owner_id = ?1", nativeQuery = true)
     List<BooksBorrowed> findAllBooksLent (Long id);
 
+    @Query(value = "SELECT * FROM books_borrowed where what_books_borrowed_id = ?1", nativeQuery = true)
+    List<BooksBorrowed> findAllByWhatBooksBorrowed_Id(Long id);
+
 }

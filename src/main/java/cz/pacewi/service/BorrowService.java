@@ -11,5 +11,6 @@ public interface BorrowService {
     BooksBorrowed getBorrowBook(Long id);
     void addBorrow(BooksBorrowed bookBorrowed);
     void backBorrowBook(Long id);
+    List<BooksBorrowed> allBooks(Long id);
 
 }

@@ -67,6 +67,7 @@ public class BookController {
     @GetMapping("/show/{id}")
     public String showBook(@PathVariable Long id, Model model) {
         model.addAttribute("book", bookService.getBook(id).orElseThrow(EntityNotFoundException::new));
+        model.addAttribute("borrow", borrowService.allBooks(id));
         return "/books/details";
     }
     @GetMapping("/delete/{id}")

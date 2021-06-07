@@ -4,10 +4,7 @@ import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.Collection;
 import java.util.Set;
 
@@ -25,6 +22,8 @@ public class User {
     @NotNull
     @Size(min = 2, max = 30)
     private String surname;
+    @NotNull
+    @Size(min = 1, max = 60)
     private String password;
     private int enable;
     private String photo;

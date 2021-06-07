@@ -39,4 +39,9 @@ public class JpaBorrowService implements BorrowService{
     public void backBorrowBook(Long id) {
         borrowRepository.deleteById(id);
     }
+
+    @Override
+    public List<BooksBorrowed> allBooks(Long id) {
+        return borrowRepository.findAllByWhatBooksBorrowed_Id(id);
+    }
 }

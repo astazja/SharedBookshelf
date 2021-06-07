@@ -37,6 +37,7 @@ public class Book {
     @NotNull
     @Size(min = 1, max = 60)
     private String genre;
+    @Size(min = 1, max = 1000)
     private String description;
     private String photo;
     private Integer pages;
@@ -47,7 +48,7 @@ public class Book {
     @ManyToOne
     @JoinColumn(name = "owner_id")
     private User owner;
-    private String bookshelf; //gdzie leży książka na której półce opis
+    private String bookshelf;
     @OneToMany(mappedBy = "whatBooksBorrowed")
     private Set<BooksBorrowed> history = new HashSet<>();
 }
