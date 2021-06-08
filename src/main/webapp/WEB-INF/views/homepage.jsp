@@ -110,7 +110,7 @@
         <div class="content-section-heading text-center">
             <h3 class="text-secondary mb-0">
                 <sec:authorize access="isAuthenticated()">
-                    <a class="nav-link" href="<c:url value="/book"/>">Your Bookshelf</a>
+                    <a class="nav-link" href="<c:url value="/book/user1"/>">Your Bookshelf</a>
                 </sec:authorize>
                 <a class="nav-link" href="<c:url value="/bookshelf"/>">Bookshelf</a>
             </h3>
